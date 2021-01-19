@@ -1,0 +1,58 @@
+@import '_color.scss'; /*importo las variables de los colores*/
+
+/*mixin de las cajas*/
+
+@mixin cajas($fondo, $animacion) { /* establezco los parametros del color de fondo y del nombre de la animación*/
+    background-color: $fondo;
+    animation-name: $animacion;
+    position: relative;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+/*coloco el mixin en cada div*/
+.div1 {
+    @include cajas($color1, IT); /* dichos parametros son establecidos puesto que cada cajita tiene un color(variable) de fondo y una animación diferente*/
+}
+.div2 {
+    @include cajas($color2, A);
+}
+.div3 {
+    @include cajas($color3, CA);
+}
+.div4 {
+    @include cajas($color4, DE);
+}
+.div5 {
+    @include cajas($color5, MY);
+}
+
+/*ANIMACIONES*/
+
+@keyframes IT{ 
+
+  from{right: 400px;}
+  to{ right:0px;}
+}
+@keyframes A{
+
+  from{top: 800px;}
+  to{ top:0px;}
+}
+@keyframes CA{
+
+  from{bottom: 1200px;}
+  to{ bottom:0px;}
+}
+@keyframes DE{
+
+  from{top: 1600px;}
+  to{ top:0px;}
+}
+@keyframes MY{
+
+  from{left: 2000px;}
+  to{ left:0px;}
+}
+
+

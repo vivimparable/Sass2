@@ -1,0 +1,47 @@
+@import '_mixin.scss';
+@import '_color.scss';
+
+/*Anidados*/
+
+.cajitas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 3px;  
+    
+        div{
+            width: 100%;
+            height: 100vh;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+            font-size: 40px;
+            overflow: hidden;
+        }
+}
+
+
+/*rectangulo del interior de los recuadros*/
+
+.cajitas{
+    div::before{ 
+    content: "";  
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.05;
+    transform: skew(30deg); 
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+} 
+
+.cajitas{
+      div:hover::before { 
+
+      transform: skew(0deg) scale(3) translate(0, 0);
+      opacity: 0.1;} 
+} 
